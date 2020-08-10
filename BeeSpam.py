@@ -1,11 +1,12 @@
 import pyautogui, time
 file = input("Name of the file to spam: ")
+count = 0
 try:
     f = open(file, 'r')
     print("reading file...")
     readed = True
 except:
-    print('cannot read file. maybe it is missing or corrupted')
+    print('Cannot read the file. Unsupported or inexistent')
     readed = False
 if readed:
     print("file readed...")
@@ -15,4 +16,8 @@ if readed:
         if line.strip():
             pyautogui.typewrite(line)
             pyautogui.press("enter")
-            print(line)
+            count ++
+print('spammed '+count+' lines')
+print('quitting in 30s...')
+time.sleep(30)
+print('quit')
