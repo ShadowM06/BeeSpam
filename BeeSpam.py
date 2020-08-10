@@ -16,7 +16,7 @@ if readed:
         if line.strip():
             pyautogui.typewrite(line)
             pyautogui.press("enter")
-            count ++
+            count + 1
 print('spammed '+count+' lines')
 print('quitting in 30s...')
 time.sleep(30)
